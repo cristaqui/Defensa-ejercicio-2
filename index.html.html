@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumatoria de 1/((2n+1)(2n+2))</title>
+    <script>
+        function calcularSumatoria() {
+            // Obtener el valor de m del formulario
+            const m = parseInt(document.getElementById('valorM').value);
+
+            // Inicializar la sumatoria
+            let sumatoria = 0;
+
+            // Calcular la sumatoria desde n=0 hasta m
+            for (let n = 0; n <= m; n++) {
+                sumatoria += 1 / ((2 * n + 1) * (2 * n + 2));
+            }
+
+            // Mostrar el resultado en el elemento con id 'resultado'
+            document.getElementById('resultado').textContent = `El resultado de la sumatoria es: ${sumatoria}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculo Sumatoria de 1/((2n+1)(2n+2)) </h1>
+    <form onsubmit="event.preventDefault(); calcularSumatoria();">
+        <label for="valorM">Ingrese el valor de m:</label>
+        <input type="number" id="valorM" name="valorM" required>
+        <button type="submit">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+</body>
+</html>
